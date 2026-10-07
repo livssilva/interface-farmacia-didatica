@@ -1,0 +1,9 @@
+export default interface ProdutoDTO {
+    idProduto?: number;
+    descricao: string;
+    validade?: string | null;
+    preco: number;
+    qtdEstoque: number;
+    qtdMinEstoque: number;
+    emAlerta?: boolean;
+}

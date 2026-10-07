@@ -1,0 +1,166 @@
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-body);
+}
+
+.conteudo-principal {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.pagina-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.pagina-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.pagina-cabecalho h2 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+.pagina-cabecalho p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+.acoes-cabecalho {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.btn-novo {
+    background-color: var(--primary-btn);
+    color: var(--primary-btn-text);
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-novo:hover {
+    background-color: var(--primary-btn-hover);
+}
+
+.btn-voltar {
+    background-color: var(--bg-card);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.btn-voltar:hover {
+    background-color: var(--bg-hover);
+    color: var(--text-main);
+}
+
+.btn-alerta-link {
+    background-color: var(--alerta-bg);
+    color: var(--alerta-text);
+    border: 1px solid var(--alerta-border);
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.btn-alerta-link:hover {
+    opacity: 0.9;
+}
+
+.card-detalhes {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.card-detalhes h3 {
+    margin-bottom: 1rem;
+    color: var(--text-main);
+    font-size: 1.15rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.info-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+.info-valor {
+    font-size: 1.05rem;
+    color: var(--text-main);
+}
+
+.alerta-sucesso {
+    background-color: var(--sucesso-bg);
+    color: var(--sucesso-text);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--sucesso-border);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.alerta-aviso {
+    background-color: var(--aviso-bg);
+    color: var(--aviso-text);
+    padding: 1.25rem;
+    border-radius: 8px;
+    border: 1px solid var(--aviso-border);
+    font-size: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mensagem-carregando {
+    text-align: center;
+    padding: 2.5rem;
+    color: var(--text-muted);
+    font-size: 1rem;
+}

@@ -1,0 +1,117 @@
+.boas-vindas {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.hero-banner {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: white;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.hero-banner h1 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.hero-banner p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-modulo {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-modulo:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-icone {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.card-modulo h2 {
+    font-size: 1.35rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.card-modulo p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+}
+
+.card-acoes {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-link {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--primary-btn);
+    background-color: var(--bg-card-secondary);
+    border: 1px solid var(--border-color);
+    transition: all 0.2s;
+}
+
+[data-theme="dark"] .btn-link {
+    color: #60a5fa;
+    border-color: #3b82f6;
+}
+
+.btn-link:hover {
+    background-color: var(--bg-hover);
+}
+
+.btn-link-primary {
+    background-color: var(--primary-btn);
+    color: var(--primary-btn-text);
+    border-color: var(--primary-btn);
+}
+
+.btn-link-primary:hover {
+    background-color: var(--primary-btn-hover);
+}
+
+.btn-alerta {
+    background-color: var(--alerta-bg);
+    color: var(--alerta-text);
+    border-color: var(--alerta-border);
+}
+
+.btn-alerta:hover {
+    opacity: 0.9;
+}

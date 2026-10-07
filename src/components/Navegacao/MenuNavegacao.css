@@ -1,0 +1,102 @@
+.menu-navegacao {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-logo a {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--header-text);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.menu-links {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.menu-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-title {
+    cursor: pointer;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    user-select: none;
+}
+
+.dropdown-title:hover {
+    background-color: var(--header-hover);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--bg-card);
+    min-width: 180px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    color: var(--text-main);
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--bg-hover);
+    color: #3b82f6;
+    font-weight: 500;
+}
+
+.menu-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.btn-tema-toggle {
+    background-color: var(--header-hover);
+    color: var(--header-text);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.45rem 0.85rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.2s;
+}
+
+.btn-tema-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.03);
+}

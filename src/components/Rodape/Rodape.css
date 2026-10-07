@@ -1,0 +1,9 @@
+.rodape {
+    background-color: var(--bg-card-secondary);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    padding: 1.25rem 1rem;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-top: auto;
+}
