@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PedidoDTO from "../../dto/PedidoDTO";
 import PedidoRequests from "../../fetch/PedidoRequests";
@@ -8,6 +8,7 @@ function PListagemPedido(): JSX.Element {
     const [pedidos, setPedidos] = useState<PedidoDTO[]>([]);
     const [carregando, setCarregando] = useState<boolean>(true);
     const [erro, setErro] = useState<string | null>(null);
+    const [pesquisa, setPesquisa] = useState<string>("");
 
     const buscarPedidos = async () => {
         try {
@@ -26,6 +27,12 @@ function PListagemPedido(): JSX.Element {
         buscarPedidos();
     }, []);
 
+    const pedidosFiltrados: PedidoDTO[] = pedidos.filter((pedido) =>
+        (pedido.nomeCliente || "")
+            .toLowerCase()
+            .startsWith(pesquisa.toLowerCase())
+    );
+
     return (
         <main className="pagina-conteudo">
             <div className="pagina-cabecalho">
@@ -38,12 +45,23 @@ function PListagemPedido(): JSX.Element {
                 </Link>
             </div>
 
+            <div style={{ marginBottom: "16px" }}>
+                <input
+                    type="text"
+                    placeholder="Pesquisar pedido pelo nome do cliente..."
+                    value={pesquisa}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                        setPesquisa(e.target.value)
+                    }
+                />
+            </div>
+
             {erro && <div className="alerta-erro">{erro}</div>}
 
             {carregando ? (
                 <p className="mensagem-carregando">Carregando pedidos...</p>
             ) : (
-                <TabelaPedidos pedidos={pedidos} />
+                <TabelaPedidos pedidos={pedidosFiltrados} />
             )}
         </main>
     );
