@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ProdutoDTO from "../../dto/ProdutoDTO";
 import ProdutoRequests from "../../fetch/ProdutoRequests";
@@ -8,6 +8,7 @@ function PListagemProduto(): JSX.Element {
     const [produtos, setProdutos] = useState<ProdutoDTO[]>([]);
     const [carregando, setCarregando] = useState<boolean>(true);
     const [erro, setErro] = useState<string | null>(null);
+    const [pesquisa, setPesquisa] = useState<string>("");
     const navigate = useNavigate();
 
     const buscarProdutos = async () => {
@@ -31,6 +32,12 @@ function PListagemProduto(): JSX.Element {
         navigate(`/cadastro/produto`, { state: { produtoParaEditar: produto } });
     };
 
+    const produtosFiltrados: ProdutoDTO[] = produtos.filter((produto) =>
+        (produto.descricao || "")
+            .toLowerCase()
+            .startsWith(pesquisa.toLowerCase())
+    );
+
     return (
         <main className="pagina-conteudo">
             <div className="pagina-cabecalho">
@@ -48,12 +55,23 @@ function PListagemProduto(): JSX.Element {
                 </div>
             </div>
 
+            <div style={{ marginBottom: "16px" }}>
+                <input
+                    type="text"
+                    placeholder="Pesquisar produto pela descrição..."
+                    value={pesquisa}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                        setPesquisa(e.target.value)
+                    }
+                />
+            </div>
+
             {erro && <div className="alerta-erro">{erro}</div>}
 
             {carregando ? (
                 <p className="mensagem-carregando">Carregando catálogo de produtos...</p>
             ) : (
-                <TabelaProdutos produtos={produtos} aoEditar={handleEditar} />
+                <TabelaProdutos produtos={produtosFiltrados} aoEditar={handleEditar} />
             )}
         </main>
     );
